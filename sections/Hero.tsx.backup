@@ -1,0 +1,352 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import Button from '../components/Button';
+import GlobalMap from '../components/GlobalMap';
+
+const Hero: React.FC = () => {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-matte-black relative overflow-hidden">
+      {/* Enhanced Background Animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Global Map Background */}
+        <GlobalMap />
+        
+        {/* Animated gradient orbs */}
+        <motion.div 
+          className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-silver/20 to-silver/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-silver/15 to-silver/3 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.2, 0.5, 0.2],
+            rotate: [360, 180, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+        
+        {/* Floating particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-silver/30 rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.3,
+            }}
+          />
+        ))}
+
+        {/* Mesh gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-silver/[0.02] to-transparent" />
+      </div>
+
+      <div className="max-w-7xl mx-auto container-padding relative z-10">
+        <div className="text-center">
+          {/* Enhanced Main Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="mb-8"
+          >
+            <motion.h1
+              className="heading-xl text-soft-white mb-4 relative"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <span className="relative z-10">SarafCard</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-silver/10 to-transparent rounded-2xl blur-xl -z-10"
+                animate={{ opacity: [0.5, 0.8, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </motion.h1>
+            
+            {/* Premium badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-silver/20 bg-silver/5 backdrop-blur-sm mb-6"
+            >
+              <div className="w-2 h-2 bg-silver rounded-full animate-pulse" />
+              <span className="text-silver text-sm font-medium">Premium Banking Experience</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Enhanced Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+            className="text-2xl md:text-3xl lg:text-4xl font-space-grotesk font-medium text-silver mb-12 max-w-4xl mx-auto leading-tight"
+          >
+            Be Your Own Bank —{' '}
+            <motion.span
+              className="text-soft-white relative"
+              whileHover={{ color: '#C0C0C0' }}
+              transition={{ duration: 0.3 }}
+            >
+              With Principles.
+              <motion.div
+                className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-silver to-transparent"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+              />
+            </motion.span>
+          </motion.p>
+
+          {/* Enhanced CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
+            className="mb-16"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative inline-block"
+            >
+              <Button
+                href="https://customer.sarafcard.io/redeem"
+                variant="primary"
+                size="lg"
+                className="text-xl px-12 py-6 relative z-10 shadow-2xl shadow-silver/20 backdrop-blur-sm bg-gradient-to-br from-silver/90 to-silver/70 border border-silver/30"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="inline-block mr-3 text-matte-black">
+                  <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
+                </svg>
+                Redeem Your Card
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Enhanced Dual Card Mockup - VISA & MasterCard */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
+            className="relative max-w-5xl mx-auto"
+          >
+            <div className="relative flex justify-center items-center gap-8">
+              {/* VISA Card */}
+              <motion.div
+                className="relative"
+                whileHover={{ 
+                  rotateY: -5,
+                  rotateX: 5,
+                  scale: 1.05,
+                  z: 50
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                style={{ perspective: 1000 }}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                <motion.div
+                  className="w-80 aspect-[1.586/1] bg-gradient-to-br from-blue-600/20 to-blue-800/10 rounded-3xl border border-blue-400/30 backdrop-blur-sm p-6 relative overflow-hidden shadow-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(29, 78, 216, 0.15), rgba(30, 64, 175, 0.05))',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(96, 165, 250, 0.3)'
+                  }}
+                >
+                  {/* Card shine effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-300/20 to-transparent"
+                    animate={{ x: [-300, 300] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    style={{ transform: 'skewX(-45deg)' }}
+                  />
+                  
+                  {/* Card Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-between text-white">
+                    <div className="flex justify-between items-start">
+                      <motion.div 
+                        className="w-12 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-md flex items-center justify-center"
+                        animate={{ opacity: [0.8, 1, 0.8] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <div className="w-6 h-4 bg-yellow-300 rounded-sm" />
+                      </motion.div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-blue-100">VISA</div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="text-lg font-mono tracking-widest text-blue-100">
+                        •••• •••• •••• 1234
+                      </div>
+                      <div className="flex justify-between items-end">
+                        <div>
+                          <div className="text-xs text-blue-200 mb-1">CARDHOLDER</div>
+                          <div className="text-sm font-semibold text-blue-100">SARAF CARD</div>
+                        </div>
+                        <div className="text-xs text-blue-200">12/28</div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* VISA Card Glow */}
+                <motion.div
+                  className="absolute inset-0 bg-blue-500/20 rounded-3xl blur-2xl -z-10"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+              </motion.div>
+
+              {/* MasterCard */}
+              <motion.div
+                className="relative"
+                whileHover={{ 
+                  rotateY: 5,
+                  rotateX: 5,
+                  scale: 1.05,
+                  z: 50
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                style={{ perspective: 1000 }}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                <motion.div
+                  className="w-80 aspect-[1.586/1] bg-gradient-to-br from-red-600/20 to-orange-600/10 rounded-3xl border border-red-400/30 backdrop-blur-sm p-6 relative overflow-hidden shadow-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(234, 88, 12, 0.05))',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(248, 113, 113, 0.3)'
+                  }}
+                >
+                  {/* Card shine effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-red-300/20 to-transparent"
+                    animate={{ x: [-300, 300] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    style={{ transform: 'skewX(-45deg)' }}
+                  />
+                  
+                  {/* Card Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-between text-white">
+                    <div className="flex justify-between items-start">
+                      <motion.div 
+                        className="w-12 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-md flex items-center justify-center"
+                        animate={{ opacity: [0.8, 1, 0.8] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                      >
+                        <div className="w-6 h-4 bg-yellow-300 rounded-sm" />
+                      </motion.div>
+                      <div className="text-right flex items-center gap-1">
+                        <div className="w-6 h-6 bg-red-500 rounded-full"></div>
+                        <div className="w-6 h-6 bg-yellow-500 rounded-full -ml-3"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="text-lg font-mono tracking-widest text-red-100">
+                        •••• •••• •••• 5678
+                      </div>
+                      <div className="flex justify-between items-end">
+                        <div>
+                          <div className="text-xs text-red-200 mb-1">CARDHOLDER</div>
+                          <div className="text-sm font-semibold text-red-100">SARAF CARD</div>
+                        </div>
+                        <div className="text-xs text-red-200">12/28</div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* MasterCard Glow */}
+                <motion.div
+                  className="absolute inset-0 bg-red-500/20 rounded-3xl blur-2xl -z-10"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Enhanced Trust Indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-20 flex flex-wrap justify-center items-center gap-8 text-silver/60"
+          >
+            {['VISA Powered', 'MasterCard Ready', 'Global Acceptance'].map((item, index) => (
+              <motion.div
+                key={item}
+                className="flex items-center gap-3"
+                whileHover={{ scale: 1.05, color: '#C0C0C0' }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div
+                  className="w-2 h-2 bg-silver/60 rounded-full"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                />
+                <span className="text-sm font-medium">{item}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Enhanced Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-6 h-10 border-2 border-silver/40 rounded-full flex justify-center relative"
+        >
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-1 h-3 bg-silver/60 rounded-full mt-2"
+          />
+          <motion.div
+            className="absolute inset-0 border-2 border-silver/20 rounded-full"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;

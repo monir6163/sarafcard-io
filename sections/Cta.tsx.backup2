@@ -1,0 +1,254 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import Button from '../components/Button';
+
+// Premium 3D Glass Icon Components
+const PremiumShieldIcon = () => (
+  <div className="relative w-6 h-6 flex-shrink-0">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="drop-shadow-sm">
+      <defs>
+        <linearGradient id="shieldGradientCta" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#E5E7EB', stopOpacity: 1 }} />
+          <stop offset="25%" style={{ stopColor: '#F9FAFB', stopOpacity: 0.9 }} />
+          <stop offset="50%" style={{ stopColor: '#D1D5DB', stopOpacity: 0.8 }} />
+          <stop offset="75%" style={{ stopColor: '#9CA3AF', stopOpacity: 0.7 }} />
+          <stop offset="100%" style={{ stopColor: '#6B7280', stopOpacity: 0.9 }} />
+        </linearGradient>
+        <linearGradient id="shieldInnerCta" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#F8FAFC', stopOpacity: 0.8 }} />
+          <stop offset="100%" style={{ stopColor: '#CBD5E1', stopOpacity: 0.6 }} />
+        </linearGradient>
+        <filter id="shieldGlowCta">
+          <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <path 
+        d="M12 1l8.25 4.5v6.75c0 4.418-3.582 8-8 8s-8.25-3.582-8.25-8V5.5L12 1z" 
+        fill="url(#shieldGradientCta)" 
+        stroke="url(#shieldInnerCta)" 
+        strokeWidth="0.5"
+        filter="url(#shieldGlowCta)"
+        className="drop-shadow-md"
+      />
+      <path 
+        d="M9 12l2 2 4-4" 
+        stroke="url(#shieldInnerCta)" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+        className="drop-shadow-sm"
+      />
+      <ellipse cx="12" cy="8" rx="6" ry="2" fill="rgba(255,255,255,0.2)" />
+    </svg>
+  </div>
+);
+
+const MetallicBoltIcon = () => (
+  <div className="relative w-6 h-6 flex-shrink-0">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="drop-shadow-sm">
+      <defs>
+        <linearGradient id="boltGradientCta" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#FEF3C7', stopOpacity: 1 }} />
+          <stop offset="25%" style={{ stopColor: '#FDE68A', stopOpacity: 0.9 }} />
+          <stop offset="50%" style={{ stopColor: '#F59E0B', stopOpacity: 0.8 }} />
+          <stop offset="75%" style={{ stopColor: '#D97706', stopOpacity: 0.7 }} />
+          <stop offset="100%" style={{ stopColor: '#92400E', stopOpacity: 0.9 }} />
+        </linearGradient>
+        <linearGradient id="boltInnerCta" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#FFFBEB', stopOpacity: 0.9 }} />
+          <stop offset="100%" style={{ stopColor: '#FCD34D', stopOpacity: 0.7 }} />
+        </linearGradient>
+        <filter id="boltGlowCta">
+          <feGaussianBlur stdDeviation="1.2" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <path 
+        d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" 
+        fill="url(#boltGradientCta)" 
+        stroke="url(#boltInnerCta)" 
+        strokeWidth="0.5"
+        filter="url(#boltGlowCta)"
+        className="drop-shadow-lg"
+      />
+      <path 
+        d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" 
+        fill="rgba(255,255,255,0.3)" 
+        className="opacity-60"
+      />
+      <ellipse cx="12" cy="6" rx="4" ry="1.5" fill="rgba(255,255,255,0.4)" />
+    </svg>
+  </div>
+);
+
+const MetallicGlobeIcon = () => (
+  <div className="relative w-6 h-6 flex-shrink-0">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="drop-shadow-sm">
+      <defs>
+        <linearGradient id="globeGradientCta" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#DBEAFE', stopOpacity: 1 }} />
+          <stop offset="25%" style={{ stopColor: '#BFDBFE', stopOpacity: 0.9 }} />
+          <stop offset="50%" style={{ stopColor: '#3B82F6', stopOpacity: 0.8 }} />
+          <stop offset="75%" style={{ stopColor: '#1E40AF', stopOpacity: 0.7 }} />
+          <stop offset="100%" style={{ stopColor: '#1E3A8A', stopOpacity: 0.9 }} />
+        </linearGradient>
+        <linearGradient id="globeInnerCta" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#F0F9FF', stopOpacity: 0.8 }} />
+          <stop offset="100%" style={{ stopColor: '#93C5FD', stopOpacity: 0.6 }} />
+        </linearGradient>
+        <filter id="globeGlowCta">
+          <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <circle 
+        cx="12" 
+        cy="12" 
+        r="10" 
+        fill="url(#globeGradientCta)" 
+        stroke="url(#globeInnerCta)" 
+        strokeWidth="0.5"
+        filter="url(#globeGlowCta)"
+        className="drop-shadow-md"
+      />
+      <path 
+        d="M12 2a15.3 15.3 0 004 10 15.3 15.3 0 00-4 10 15.3 15.3 0 00-4-10 15.3 15.3 0 004-10z" 
+        fill="none" 
+        stroke="url(#globeInnerCta)" 
+        strokeWidth="1.5"
+        className="opacity-70"
+      />
+      <path 
+        d="M2 12h20" 
+        stroke="url(#globeInnerCta)" 
+        strokeWidth="1.5"
+        className="opacity-70"
+      />
+      <ellipse cx="12" cy="7" rx="8" ry="2" fill="rgba(255,255,255,0.2)" />
+      <ellipse cx="12" cy="12" rx="3" ry="8" fill="rgba(255,255,255,0.1)" opacity="0.6" />
+    </svg>
+  </div>
+);
+
+const Cta: React.FC = () => {
+  return (
+    <section className="section-padding bg-matte-black relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-silver/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-silver/3 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-silver/3 rounded-full blur-2xl" />
+      </div>
+
+      <div className="max-w-4xl mx-auto container-padding relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          {/* Main Headline */}
+          <h2 className="heading-lg text-soft-white mb-8">
+            Get Your Card Today
+          </h2>
+
+          {/* Subheadline */}
+          <p className="text-body text-silver mb-8 md:mb-12 max-w-2xl mx-auto">
+            Join thousands of users who have already discovered the freedom of digital banking with SarafCard. Your financial independence starts here.
+          </p>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex justify-center mb-8 md:mb-16"
+          >
+            <motion.a
+              href="https://customer.sarafcard.io"
+              className="relative group cursor-pointer touch-manipulation"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ 
+                WebkitTapHighlightColor: 'transparent',
+                touchAction: 'manipulation',
+                userSelect: 'none'
+              }}
+              onTouchStart={(e) => {
+                // Prevent default touch behavior and ensure proper touch handling
+                e.currentTarget.style.transform = 'scale(0.95)';
+              }}
+              onTouchEnd={(e) => {
+                // Reset transform on touch end
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-silver/20 to-silver/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative bg-gradient-to-r from-silver/10 to-silver/20 backdrop-blur-sm border border-silver/30 rounded-2xl px-8 py-4 group-hover:from-silver/20 group-hover:to-silver/30 transition-all duration-300 cursor-pointer">
+                <span className="text-lg font-semibold bg-gradient-to-r from-silver to-white bg-clip-text text-transparent pointer-events-none">
+                  Redeem Now
+                </span>
+              </div>
+            </motion.a>
+          </motion.div>
+
+          {/* Trust Badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-8 md:mt-16 pt-8 md:pt-12 border-t border-silver/20"
+          >
+            <p className="text-caption text-silver/60 mb-8">
+              Trusted by users worldwide
+            </p>
+            
+            <div className="flex flex-wrap justify-center items-center gap-8 text-silver/40">
+              <motion.div 
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <PremiumShieldIcon />
+                <span className="text-sm font-medium">Bank-Level Security</span>
+              </motion.div>
+              <div className="w-1 h-1 bg-silver/20 rounded-full" />
+              <motion.div 
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <MetallicBoltIcon />
+                <span className="text-sm font-medium">Instant Activation</span>
+              </motion.div>
+              <div className="w-1 h-1 bg-silver/20 rounded-full" />
+              <motion.div 
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <MetallicGlobeIcon />
+                <span className="text-sm font-medium">Global Access</span>
+              </motion.div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Cta;

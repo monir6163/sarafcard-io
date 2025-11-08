@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Main Homepage - Highest Priority -->
+  <url>
+    <loc>https://sarafcard.io/</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sarafcard.io/og-image.png</image:loc>
+      <image:title>SarafCard - Virtual Visa &amp; Mastercard</image:title>
+      <image:caption>Best Worldwide Spending Freedom with instant virtual prepaid cards</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Features Page -->
+  <url>
+    <loc>https://sarafcard.io/#features</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- How It Works -->
+  <url>
+    <loc>https://sarafcard.io/#how-it-works</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- FAQ - High Priority for Long-tail Keywords -->
+  <url>
+    <loc>https://sarafcard.io/#faq</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://sarafcard.io/#terms</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Customer Portal -->
+  <url>
+    <loc>https://customer.sarafcard.io/</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+</urlset>

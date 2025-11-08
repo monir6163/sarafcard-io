@@ -1,0 +1,111 @@
+/* Starfield background styles */
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+
+.stars {
+  --star-color: #E5E5E5;
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: 2px;
+  --tail-direction: -45deg;
+}
+
+#stars1 {
+  --star-color: #C0C0C0; /* Silver */
+  --star-tail-length: 5em;
+  --star-tail-height: 1px;
+  --star-width: 1px;
+}
+
+#stars2 {
+  --star-color: #E5E5E5; /* Soft White */
+  --star-tail-length: 7em;
+  --star-tail-height: 2px;
+  --star-width: 2px;
+}
+
+#stars3 {
+  --star-color: #a2a2a2; /* Muted Silver */
+  --star-tail-length: 4em;
+  --star-tail-height: 1px;
+  --star-width: 1px;
+}
+
+.stars::before, .stars::after {
+  content: '';
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  background: linear-gradient(to right, var(--star-color), transparent);
+  border-radius: 50%;
+  transform: translateX(var(--left-offset)) rotate(var(--tail-direction));
+  animation: shooting-star-anim 3s linear infinite;
+  opacity: 0;
+}
+
+.stars::before {
+  --top-offset: 10%;
+  --left-offset: 20%;
+  animation-delay: 0s;
+}
+
+.stars::after {
+  --top-offset: 40%;
+  --left-offset: 70%;
+  animation-delay: 1.5s;
+}
+
+@keyframes shooting-star-anim {
+  0% {
+    transform: translateX(var(--left-offset)) rotate(var(--tail-direction));
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--left-offset) + 800px)) rotate(var(--tail-direction));
+    opacity: 0;
+  }
+}
+
+/* Nano Stars */
+@for $i from 1 through 100 {
+  $size: random(3) + 0.5px;
+  $x: random(2000) - 1000px;
+  $y: random(2000) - 1000px;
+  $duration: random(10) + 5s;
+  $delay: random(10) * -1s;
+
+  #stars1::before {
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size;
+    background: var(--star-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate($x, $y);
+    animation: twinkle $duration $delay infinite;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: random(5) / 10; }
+  50% { opacity: 1; }
+} 
