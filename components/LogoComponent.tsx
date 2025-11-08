@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 interface LogoComponentProps {
@@ -31,10 +32,13 @@ const LogoComponent: React.FC<LogoComponentProps> = ({
         className={`flex items-center ${className}`}
         whileHover={{ scale: 1.05 }}
       >
-        <img
+        <Image
           src={logoSrc}
           alt="SarafCard Logo"
+          width={200}
+          height={size === "sm" ? 32 : size === "md" ? 40 : 64}
           className={`${sizeClasses[size]} w-auto object-contain`}
+          priority
         />
       </motion.div>
     );
