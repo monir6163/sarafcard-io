@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { CardsImage } from "@/lib/CardsImage";
 import { motion } from "framer-motion";
@@ -6,56 +5,6 @@ import Image from "next/image";
 import Slider from "react-slick";
 
 export default function SlickSliderCards() {
-  function SampleNextArrow(props: any) {
-    const { className, onClick } = props;
-    return (
-      <div
-        className={className}
-        onClick={onClick}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "48px",
-          height: "48px",
-          borderRadius: "50%",
-          background: "rgba(255, 255, 255, 0.15)", // glass
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          zIndex: 10,
-        }}
-      >
-        <span style={{ fontSize: "28px", color: "#fff" }}></span>
-      </div>
-    );
-  }
-
-  function SamplePrevArrow(props: any) {
-    const { className, onClick } = props;
-    return (
-      <div
-        className={className}
-        onClick={onClick}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "48px",
-          height: "48px",
-          borderRadius: "50%",
-          background: "rgba(255, 255, 255, 0.15)", // glass
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          zIndex: 10,
-        }}
-      >
-        <span style={{ fontSize: "28px", color: "#fff" }}></span>
-      </div>
-    );
-  }
-
   const settings = {
     dots: false,
     arrows: true,
@@ -64,8 +13,6 @@ export default function SlickSliderCards() {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
