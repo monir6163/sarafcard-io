@@ -28,6 +28,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobilePagesOpen, setIsMobilePagesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -242,7 +243,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-silver/20 mt-4 pt-4"
+              className="md:hidden border-t border-silver/20 mt-4 pt-4 max-h-[calc(100vh-160px)] overflow-y-auto"
               style={{
                 background: "rgba(11, 11, 12, 0.3)",
                 backdropFilter: "blur(20px)",
@@ -272,26 +273,57 @@ const Navbar: React.FC = () => {
 
                 {/* Mobile Pages Section */}
                 <div className="border-t border-silver/20 pt-4">
-                  <div className="text-silver font-medium text-sm mb-3 px-2">
-                    Pages
-                  </div>
-                  {pageItems.map((item) => (
-                    <Link key={item.name} href={item.href}>
+                  <motion.button
+                    onClick={() => setIsMobilePagesOpen(!isMobilePagesOpen)}
+                    className="flex items-center justify-between w-full text-silver font-medium text-sm px-2 py-2 touch-manipulation"
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                      WebkitTapHighlightColor: "transparent",
+                      touchAction: "manipulation",
+                      userSelect: "none",
+                    }}
+                  >
+                    <span>Pages</span>
+                    <motion.div
+                      animate={{ rotate: isMobilePagesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ChevronDownIcon className="w-4 h-4" />
+                    </motion.div>
+                  </motion.button>
+
+                  <AnimatePresence>
+                    {isMobilePagesOpen && (
                       <motion.div
-                        className="block text-soft-white hover:text-silver transition-colors duration-300 font-medium py-2 pl-4 text-left touch-manipulation cursor-pointer"
-                        whileHover={{ x: 10 }}
-                        whileTap={{ scale: 0.95 }}
-                        style={{
-                          WebkitTapHighlightColor: "transparent",
-                          touchAction: "manipulation",
-                          userSelect: "none",
-                        }}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
                       >
-                        {item.name}
+                        {pageItems.map((item) => (
+                          <Link key={item.name} href={item.href}>
+                            <motion.div
+                              className="block text-soft-white hover:text-silver transition-colors duration-300 font-medium py-2 pl-4 text-left touch-manipulation cursor-pointer"
+                              whileHover={{ x: 10 }}
+                              whileTap={{ scale: 0.95 }}
+                              style={{
+                                WebkitTapHighlightColor: "transparent",
+                                touchAction: "manipulation",
+                                userSelect: "none",
+                              }}
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setIsMobilePagesOpen(false);
+                              }}
+                            >
+                              {item.name}
+                            </motion.div>
+                          </Link>
+                        ))}
                       </motion.div>
-                    </Link>
-                  ))}
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 <div className="pt-4 space-y-3">
