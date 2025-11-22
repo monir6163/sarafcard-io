@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import BrandedCards from '@/components/BrandedCards';
+import BrandedCards from "@/components/BrandedCards";
+import { motion } from "framer-motion";
+import React from "react";
 
 // New Starfield component for the premium galaxy background
 const Starfield = () => {
@@ -26,7 +26,23 @@ const Starfield = () => {
           width: 1px;
           height: 1px;
           background: transparent;
-          box-shadow: 1904px 906px #FFF, 849px 1339px #FFF, 1503px 127px #FFF, 1257px 1018px #FFF, 1133px 93px #FFF, 1146px 664px #FFF, 151px 1136px #FFF, 1146px 1354px #FFF, 1265px 432px #FFF, 508px 1283px #FFF, 71px 105px #FFF, 34px 1319px #FFF, 1072px 137px #FFF, 1238px 1393px #FFF, 935px 1078px #FFF, 1016px 119px #FFF, 1398px 109px #FFF, 344px 1060px #FFF, 1876px 1118px #FFF, 600px 376px #FFF, 1032px 34px #FFF, 1416px 86px #FFF, 1378px 1137px #FFF, 1114px 439px #FFF, 1809px 427px #FFF, 1494px 914px #FFF, 1308px 505px #FFF, 1235px 1218px #FFF, 1836px 774px #FFF, 1162px 934px #FFF, 429px 1433px #FFF, 1083px 45px #FFF, 132px 1421px #FFF, 1199px 112px #FFF, 400px 735px #FFF, 1184px 695px #FFF, 1813px 441px #FFF, 343px 1434px #FFF, 110px 1003px #FFF, 1536px 393px #FFF, 397px 446px #FFF, 1837px 1380px #FFF, 1279px 1192px #FFF, 1297px 803px #FFF, 1324px 1357px #FFF, 219px 926px #FFF, 1693px 1191px #FFF, 1630px 103px #FFF, 1819px 583px #FFF;
+          box-shadow: 1904px 906px #fff, 849px 1339px #fff, 1503px 127px #fff,
+            1257px 1018px #fff, 1133px 93px #fff, 1146px 664px #fff,
+            151px 1136px #fff, 1146px 1354px #fff, 1265px 432px #fff,
+            508px 1283px #fff, 71px 105px #fff, 34px 1319px #fff,
+            1072px 137px #fff, 1238px 1393px #fff, 935px 1078px #fff,
+            1016px 119px #fff, 1398px 109px #fff, 344px 1060px #fff,
+            1876px 1118px #fff, 600px 376px #fff, 1032px 34px #fff,
+            1416px 86px #fff, 1378px 1137px #fff, 1114px 439px #fff,
+            1809px 427px #fff, 1494px 914px #fff, 1308px 505px #fff,
+            1235px 1218px #fff, 1836px 774px #fff, 1162px 934px #fff,
+            429px 1433px #fff, 1083px 45px #fff, 132px 1421px #fff,
+            1199px 112px #fff, 400px 735px #fff, 1184px 695px #fff,
+            1813px 441px #fff, 343px 1434px #fff, 110px 1003px #fff,
+            1536px 393px #fff, 397px 446px #fff, 1837px 1380px #fff,
+            1279px 1192px #fff, 1297px 803px #fff, 1324px 1357px #fff,
+            219px 926px #fff, 1693px 1191px #fff, 1630px 103px #fff,
+            1819px 583px #fff;
           animation: animStar 50s linear infinite;
         }
 
@@ -34,7 +50,22 @@ const Starfield = () => {
           width: 2px;
           height: 2px;
           background: transparent;
-          box-shadow: 1841px 117px #FFF, 182px 738px #FFF, 1037px 590px #FFF, 148px 1325px #FFF, 1022px 1029px #FFF, 1109px 1326px #FFF, 1210px 73px #FFF, 1530px 1113px #FFF, 888px 1391px #FFF, 1319px 1238px #FFF, 1022px 1432px #FFF, 126px 1222px #FFF, 115px 337px #FFF, 1888px 58px #FFF, 689px 1007px #FFF, 479px 802px #FFF, 1205px 1114px #FFF, 269px 1152px #FFF, 1341px 839px #FFF, 313px 495px #FFF, 1009px 106px #FFF, 1445px 1002px #FFF, 103px 1217px #FFF, 119px 132px #FFF, 1481px 1332px #FFF, 646px 1093px #FFF, 1619px 1234px #FFF, 1735px 972px #FFF, 1095px 1394px #FFF, 335px 233px #FFF, 1606px 410px #FFF, 584px 1419px #FFF, 1802px 572px #FFF, 1492px 953px #FFF, 1282px 1224px #FFF, 1050px 1009px #FFF, 1459px 1422px #FFF, 1274px 287px #FFF, 1091px 956px #FFF, 747px 544px #FFF, 1804px 914px #FFF, 582px 28px #FFF, 303px 1133px #FFF, 1188px 633px #FFF, 731px 1102px #FFF, 50px 520px #FFF, 1200px 486px #FFF, 1551px 542px #FFF;
+          box-shadow: 1841px 117px #fff, 182px 738px #fff, 1037px 590px #fff,
+            148px 1325px #fff, 1022px 1029px #fff, 1109px 1326px #fff,
+            1210px 73px #fff, 1530px 1113px #fff, 888px 1391px #fff,
+            1319px 1238px #fff, 1022px 1432px #fff, 126px 1222px #fff,
+            115px 337px #fff, 1888px 58px #fff, 689px 1007px #fff,
+            479px 802px #fff, 1205px 1114px #fff, 269px 1152px #fff,
+            1341px 839px #fff, 313px 495px #fff, 1009px 106px #fff,
+            1445px 1002px #fff, 103px 1217px #fff, 119px 132px #fff,
+            1481px 1332px #fff, 646px 1093px #fff, 1619px 1234px #fff,
+            1735px 972px #fff, 1095px 1394px #fff, 335px 233px #fff,
+            1606px 410px #fff, 584px 1419px #fff, 1802px 572px #fff,
+            1492px 953px #fff, 1282px 1224px #fff, 1050px 1009px #fff,
+            1459px 1422px #fff, 1274px 287px #fff, 1091px 956px #fff,
+            747px 544px #fff, 1804px 914px #fff, 582px 28px #fff,
+            303px 1133px #fff, 1188px 633px #fff, 731px 1102px #fff,
+            50px 520px #fff, 1200px 486px #fff, 1551px 542px #fff;
           animation: animStar 100s linear infinite;
         }
 
@@ -42,7 +73,22 @@ const Starfield = () => {
           width: 3px;
           height: 3px;
           background: transparent;
-          box-shadow: 1018px 1297px #FFF, 110px 133px #FFF, 1208px 873px #FFF, 317px 892px #FFF, 1788px 1090px #FFF, 1618px 1324px #FFF, 354px 1136px #FFF, 1732px 304px #FFF, 1194px 1079px #FFF, 1826px 742px #FFF, 1035px 395px #FFF, 1193px 803px #FFF, 502px 1383px #FFF, 1438px 1092px #FFF, 1599px 1134px #FFF, 1834px 134px #FFF, 120px 472px #FFF, 1530px 303px #FFF, 1195px 690px #FFF, 1884px 96px #FFF, 1025px 338px #FFF, 1381px 1406px #FFF, 1673px 223px #FFF, 1526px 819px #FFF, 1870px 1029px #FFF, 329px 1105px #FFF, 1779px 618px #FFF, 1539px 1027px #FFF, 1411px 133px #FFF, 744px 113px #FFF, 1594px 58px #FFF, 137px 227px #FFF, 532px 635px #FFF, 1830px 1432px #FFF, 144px 1374px #FFF, 1242px 64px #FFF, 1409px 1012px #FFF, 93px 512px #FFF, 1251px 905px #FFF, 1801px 1014px #FFF, 622px 1027px #FFF, 100px 1335px #FFF, 381px 906px #FFF, 1073px 839px #FFF, 536px 998px #FFF, 1559px 515px #FFF;
+          box-shadow: 1018px 1297px #fff, 110px 133px #fff, 1208px 873px #fff,
+            317px 892px #fff, 1788px 1090px #fff, 1618px 1324px #fff,
+            354px 1136px #fff, 1732px 304px #fff, 1194px 1079px #fff,
+            1826px 742px #fff, 1035px 395px #fff, 1193px 803px #fff,
+            502px 1383px #fff, 1438px 1092px #fff, 1599px 1134px #fff,
+            1834px 134px #fff, 120px 472px #fff, 1530px 303px #fff,
+            1195px 690px #fff, 1884px 96px #fff, 1025px 338px #fff,
+            1381px 1406px #fff, 1673px 223px #fff, 1526px 819px #fff,
+            1870px 1029px #fff, 329px 1105px #fff, 1779px 618px #fff,
+            1539px 1027px #fff, 1411px 133px #fff, 744px 113px #fff,
+            1594px 58px #fff, 137px 227px #fff, 532px 635px #fff,
+            1830px 1432px #fff, 144px 1374px #fff, 1242px 64px #fff,
+            1409px 1012px #fff, 93px 512px #fff, 1251px 905px #fff,
+            1801px 1014px #fff, 622px 1027px #fff, 100px 1335px #fff,
+            381px 906px #fff, 1073px 839px #fff, 536px 998px #fff,
+            1559px 515px #fff;
           animation: animStar 150s linear infinite;
         }
 
@@ -53,20 +99,25 @@ const Starfield = () => {
           left: -100px;
           width: 2px;
           height: 2px;
-          background: linear-gradient(45deg, #FFF, #C0C0C0);
+          background: linear-gradient(45deg, #fff, #c0c0c0);
           border-radius: 50%;
           box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
           animation: shootingStar1 8s ease-in-out infinite;
         }
 
         #shooting-star-1::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: -60px;
           width: 60px;
           height: 1px;
-          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+          background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent
+          );
           transform: rotate(-45deg);
           transform-origin: right center;
         }
@@ -77,7 +128,7 @@ const Starfield = () => {
           left: -100px;
           width: 2px;
           height: 2px;
-          background: linear-gradient(45deg, #FFF, #C0C0C0);
+          background: linear-gradient(45deg, #fff, #c0c0c0);
           border-radius: 50%;
           box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
           animation: shootingStar2 12s ease-in-out infinite;
@@ -85,13 +136,18 @@ const Starfield = () => {
         }
 
         #shooting-star-2::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: -80px;
           width: 80px;
           height: 1px;
-          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+          background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent
+          );
           transform: rotate(-30deg);
           transform-origin: right center;
         }
@@ -102,7 +158,7 @@ const Starfield = () => {
           left: -100px;
           width: 2px;
           height: 2px;
-          background: linear-gradient(45deg, #FFF, #C0C0C0);
+          background: linear-gradient(45deg, #fff, #c0c0c0);
           border-radius: 50%;
           box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
           animation: shootingStar3 15s ease-in-out infinite;
@@ -110,13 +166,18 @@ const Starfield = () => {
         }
 
         #shooting-star-3::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: -70px;
           width: 70px;
           height: 1px;
-          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+          background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent
+          );
           transform: rotate(-60deg);
           transform-origin: right center;
         }
@@ -212,13 +273,15 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hidden md:block heading-xl mb-2"
           style={{
-            background: 'linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 25%, #F5F5F5 50%, #C0C0C0 75%, #E5E5E5 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 4px 8px rgba(192, 192, 192, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2)',
-            filter: 'drop-shadow(0 4px 8px rgba(192, 192, 192, 0.4))',
-            transform: 'perspective(1000px) rotateX(5deg)',
+            background:
+              "linear-gradient(135deg, #E5E5E5 0%, #C0C0C0 25%, #F5F5F5 50%, #C0C0C0 75%, #E5E5E5 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            textShadow:
+              "0 4px 8px rgba(192, 192, 192, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2)",
+            filter: "drop-shadow(0 4px 8px rgba(192, 192, 192, 0.4))",
+            transform: "perspective(1000px) rotateX(5deg)",
           }}
         >
           SarafCard
@@ -231,7 +294,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-0.5 sm:mt-2 text-body font-medium text-gray-400"
         >
-          Virtual Visa & Mastercard • Worldwide Spending Freedom • 200+ Countries
+          Virtual Visa & Mastercard • Worldwide Spending Freedom • 200+
+          Countries
         </motion.p>
 
         {/* Animated Premium Badge - Mobile Responsive */}
@@ -253,7 +317,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 1.2 }}
           className="mt-1 sm:mt-4 heading-lg font-light tracking-wide leading-tight px-2"
         >
-          Be Your Own Bank — <span className="font-medium text-silver">With Principles.</span>
+          Be Your Own Bank —{" "}
+          <span className="font-medium text-silver">With Principles.</span>
         </motion.h2>
 
         {/* Branded VISA and MasterCard Component - Mobile Responsive */}
@@ -269,7 +334,8 @@ const Hero: React.FC = () => {
           className="mt-1 sm:mt-6 text-center px-4"
         >
           <p className="text-body text-gray-400">
-            Global Access. <span className="text-silver">Unmatched Prestige.</span>
+            Global Access.{" "}
+            <span className="text-silver">Unmatched Prestige.</span>
           </p>
         </motion.div>
       </div>

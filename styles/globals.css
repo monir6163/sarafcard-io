@@ -17,8 +17,8 @@ body {
 }
 
 /* Slick slider customization */
-.slick-prev,
-.slick-next {
+.swiper-button-prev,
+.swiper-button-next {
   background: rgba(255, 255, 255, 0.15) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
@@ -32,28 +32,32 @@ body {
   padding: 0 !important;
   z-index: 9999 !important;
 }
+.swiper-button-prev {
+  left: 0px !important;
+}
+.swiper-button-next {
+  right: 0px !important;
+}
 
 /* Remove slick's forced icon background */
-.slick-prev:before,
-.slick-next:before {
+.swiper-navigation-icon {
   background: none !important;
   font-size: 24px !important;
   color: #ffffff !important;
   opacity: 1 !important;
 }
 
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  width: 26px !important;
+  height: 26px !important;
+  fill: #0f172a !important;
+}
+
 /* Hover effect */
-.slick-prev:hover,
-.slick-next:hover {
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
   background: rgba(255, 255, 255, 0.25) !important;
-}
-.slick-prev::before,
-.slick-next::before {
-  content: "\276E" !important; /* ⇦ */
-  background-image: none !important;
-}
-.slick-next::before {
-  content: "\276F" !important; /* ⇨ */
 }
 
 /* end slick slider  */

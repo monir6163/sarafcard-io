@@ -2,51 +2,41 @@
 import { CardsImage } from "@/lib/CardsImage";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Slider from "react-slick";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function SlickSliderCards() {
-  const settings = {
-    dots: false,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        {CardsImage.map((cardImage, i) => {
-          return (
+    <Swiper
+      slidesPerView={2}
+      spaceBetween={0}
+      loop={true}
+      pagination={false}
+      navigation={true}
+      modules={[Pagination, Navigation]}
+      className=""
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+      }}
+    >
+      {CardsImage.map((cardImage, i) => {
+        return (
+          <SwiperSlide key={i}>
             <motion.div
-              key={i}
               className="relative group cursor-pointer"
               whileHover={{
                 rotateY: 0,
@@ -119,9 +109,9 @@ export default function SlickSliderCards() {
                 transition={{ duration: 3, repeat: Infinity }}
               />
             </motion.div>
-          );
-        })}
-      </Slider>
-    </div>
+          </SwiperSlide>
+        );
+      })}
+    </Swiper>
   );
 }
